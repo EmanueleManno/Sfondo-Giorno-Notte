@@ -1,0 +1,73 @@
+/*Stile applicato a tutti gli elementi*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Stile dello scenario*/
+.scene {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#a6d8ff, #fff, #fff);
+}
+
+/*Stile dello scenario di notte*/
+.dark .scene {
+    background: #222833;
+}
+
+/*Stile del sole*/
+.sun {
+    position: absolute;
+    top: 100px;
+    left: 35%;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/*Stile della luna*/
+.dark .sun {
+    left: 65%;
+    box-shadow: 0 0 0 #fff;
+}
+
+/*Stile della luna in Before*/
+.dark .sun::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background: #222833;
+    border-radius: 50%;
+}
+
+/*Stile dello sfondo*/
+.bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 445px;
+    background: url(city.png);
+    background-size: 1344px;
+    background-repeat: repeat-x;
+    animation:  animateBg 15s linear infinite;
+}
+
+/*Stile dell'animazione*/
+@keyframes animateBg {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1344px;
+    }
+}
